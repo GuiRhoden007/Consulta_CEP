@@ -1,5 +1,4 @@
-document
-    .getElementById("cepForm")
+document.getElementById("cepForm")
     .addEventListener("submit", async function (e) {
         e.preventDefault();
 
@@ -37,3 +36,31 @@ document
             console.error("Erro ao buscar o CEP:", error);
         }
     });
+
+    document.getElementById("saveButton").addEventListener("click", function() {
+        const nome = document.getElementById("nome").value.trim();
+        const cep = document.getElementById("cep").value.trim();
+        const logradouro = document.getElementById("logradouro").value.trim();
+        const complemento = document.getElementById("complemento").value.trim();
+        const bairro = document.getElementById("bairro").value.trim();
+        const cidade = document.getElementById("cidade").value.trim();
+        const estado = document.getElementById("estado").value.trim();
+        const ddd = document.getElementById("ddd").value.trim();
+    
+        if (nome && cep && logradouro && bairro && cidade && estado && ddd) {
+            const userData = {
+                nome: nome,
+                cep: cep,
+                logradouro: logradouro,
+                complemento: complemento,
+                bairro: bairro,
+                cidade: cidade,
+                estado: estado,
+                ddd: ddd
+            };
+    
+            localStorage.setItem("userData", JSON.stringify(userData));
+        }
+    });
+    
+    

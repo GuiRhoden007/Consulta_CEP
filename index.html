@@ -17,6 +17,10 @@
 
         <form id="cepForm" class="text-start">
             <div class="camposOfConcentration">
+                <label for="nome" class="form-label">Nome</label>
+                <input type="text" class="form-control" id="nome" placeholder="Nome do usuário" required />
+            </div>
+            <div class="camposOfConcentration">
                 <label for="cep" class="form-label">CEP</label>
                 <input type="text" class="form-control" id="cep" maxlength="8" placeholder="Ex: 01001000" required />
             </div>
@@ -46,6 +50,8 @@
             </div>
 
             <button type="submit" class="btn btn-success w-100">Buscar</button>
+            <button type="button" id="saveButton" class="btn btn-primary w-100 mt-2">Salvar</button>
+
         </form>
     </div>
 
